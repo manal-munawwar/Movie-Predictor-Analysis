@@ -1,0 +1,38 @@
+# =============================================================================
+# requirements.txt
+# =============================================================================
+# PURPOSE:
+#   Lists all Python packages needed to run the Movie Success Predictor app.
+#   This file is used to install dependencies in one command:
+#       pip3 install -r requirements.txt
+#
+# VERSIONS:
+#   These are the exact versions confirmed working on Python 3.14 (macOS).
+#   When deploying to Streamlit Community Cloud, this file is read
+#   automatically to install all dependencies.
+# =============================================================================
+
+# ── Web Framework (Flask Backend) ─────────────────────────────────────────────
+flask>=3.1.0                # REST API server — runs the /predict endpoint
+
+# ── Machine Learning ──────────────────────────────────────────────────────────
+scikit-learn>=1.8.0         # Gradient Boosting model + StandardScaler
+joblib>=1.5.0               # Saves and loads .pkl model files
+
+# ── Data Processing ───────────────────────────────────────────────────────────
+numpy>=2.4.0                # Numerical operations (log1p, arrays)
+pandas>=3.0.0               # DataFrames — builds the model input vector
+
+# ── Frontend (Streamlit App) ──────────────────────────────────────────────────
+streamlit>=1.40.0           # Web UI framework — runs streamlit_app.py
+plotly>=6.0.0               # Interactive charts (confidence bar, feature importance)
+
+# ── HTTP Client ───────────────────────────────────────────────────────────────
+requests>=2.32.0            # Streamlit uses this to call the Flask API
+
+# ── Excel File Support ────────────────────────────────────────────────────────
+openpyxl>=3.1.0             # Reads the .xlsx dataset in the notebook
+
+# ── Visualisation (Notebook EDA) ─────────────────────────────────────────────
+matplotlib>=3.9.0           # EDA plots in the notebook
+seaborn>=0.13.0             # Styled EDA plots in the notebook
